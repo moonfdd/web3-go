@@ -23,9 +23,10 @@ func main() {
 		fmt.Println("Datadir------------")
 		fmt.Println(web3.Admin.Datadir(context.Background()))
 		fmt.Println("AddPeer------------")
-		fmt.Println(web3.Admin.AddPeer(context.Background(), "https://www.baidu.com"))
+		fmt.Println(web3.Admin.AddPeer(context.Background(), "enode://a979fb575495b8d6db44f750317d0f4622bf4c2aa3365d6af7c284339968eef29b69ad0dce72a4d8db5ebb4968de0e3bec910127f134779fbcb0cb6d3331163c@52.16.188.185:30303"))
 		fmt.Println("Peers------------")
 		fmt.Println(web3.Admin.Peers(context.Background()))
+		return
 	}
 	if false {
 		fmt.Println("GetTrieFlushInterval------------")
@@ -59,7 +60,38 @@ func main() {
 		fmt.Println("Modules------------")
 		fmt.Println(web3.Rpc.Modules(context.Background()))
 	}
-	if false {
+	if true {
+		bin := `// SPDX-License-Identifier: GPL-3.0
+
+		pragma solidity >=0.8.2 <0.9.0;
+		
+		/**
+		 * @title Storage
+		 * @dev Store & retrieve value in a variable
+		 * @custom:dev-run-script ./scripts/deploy_with_ethers.ts
+		 */
+		contract Storage {
+		
+			uint256 number;
+		
+			/**
+			 * @dev Store value in variable
+			 * @param num value to store
+			 */
+			function store(uint256 num) public {
+				number = num;
+			}
+		
+			/**
+			 * @dev Return value 
+			 * @return value of 'number'
+			 */
+			function retrieve() public view returns (uint256){
+				return number;
+			}
+		}
+		`
+		_ = bin
 		fmt.Println("Test------------")
 		fmt.Println(web3.TxPool.Test(context.Background()))
 		return
@@ -70,7 +102,7 @@ func main() {
 		fmt.Println("Status------------")
 		fmt.Println(web3.TxPool.Status(context.Background()))
 	}
-	if true {
+	if false {
 		fmt.Println("Proposals------------")
 		fmt.Println(web3.Clique.Proposals(context.Background()))
 		fmt.Println("Status------------")

@@ -7,6 +7,10 @@ import (
 	"github.com/ethereum/go-ethereum/rpc"
 )
 
+// clearHistory
+// sleep
+// sleepBlocks
+
 type Admin struct {
 	c *rpc.Client
 }

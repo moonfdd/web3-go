@@ -13,6 +13,47 @@ type Eth struct {
 	c *rpc.Client
 }
 
+// eth_compileSolidity
+// todo
+
+// eth_compileLLL
+// todo
+
+// eth_compileSerpent
+// todo
+
+// eth_submitWork
+// todo
+
+// eth_getWork
+// todo
+
+// defaultAccount 属性
+// defaultBlock
+// eth_protocolVersion
+// eth_contract
+// createAccessList
+// filter
+// getBalance
+// getBlock
+// getBlockTransactionCount
+// getBlockUncleCount
+// getCode
+// getCompilers
+// getRawTransactionFromBlock
+// getStorageAt
+// getTransaction
+// getTransactionCount
+// getTransactionFromBlock
+// getTransactionReceipt
+// getUncle
+// iban
+// icapNamereg
+// namereg
+// sendIBANTransaction
+// sendRawTransaction
+// submitWork
+
 func NewEth(c *rpc.Client) *Eth {
 	e := &Eth{}
 	e.c = c

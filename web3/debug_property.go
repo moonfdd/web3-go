@@ -4,6 +4,9 @@ import (
 	"github.com/ethereum/go-ethereum/rpc"
 )
 
+// debug_freezeClient
+// debug_seedHash
+
 type Debug struct {
 	c *rpc.Client
 }

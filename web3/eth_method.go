@@ -259,7 +259,7 @@ type AccessListResult struct {
 // method
 func (e *Eth) CreateAccessList(ctx context.Context, args TransactionArgs, blockNrOrHash *rpc.BlockNumberOrHash) (*AccessListResult, error) {
 	var result *AccessListResult
-	err := e.c.CallContext(ctx, &result, "eth_getProof", args, blockNrOrHash)
+	err := e.c.CallContext(ctx, &result, "eth_createAccessList", args, blockNrOrHash)
 	return result, err
 }
 

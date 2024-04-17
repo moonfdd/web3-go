@@ -7,6 +7,8 @@ import (
 	"github.com/ethereum/go-ethereum/rpc"
 )
 
+// backtraceAt
+
 type Clique struct {
 	c *rpc.Client
 }

@@ -82,7 +82,7 @@ func (c *Clique) GetSnapshotAtHash(ctx context.Context, hash common.Hash) (*cliq
 // from web3 console clique
 // method
 func (c *Clique) Propose(ctx context.Context, address common.Address, auth bool) error {
-	err := c.c.CallContext(ctx, nil, "clique_getSnapshotAtHash", address, auth)
+	err := c.c.CallContext(ctx, nil, "clique_propose", address, auth)
 	return err
 }
 

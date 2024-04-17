@@ -48,8 +48,10 @@ func (t *TxPool) Status(ctx context.Context) (map[string]hexutil.Uint, error) {
 	return result, err
 }
 
-func (t *TxPool) Test(ctx context.Context) (interface{}, error) {
+// this is test method
+func (t *TxPool) Test(ctx context.Context, a ...interface{}) (interface{}, error) {
 	var result interface{}
-	err := t.c.CallContext(ctx, &result, "clique_proposals")
+	err := t.c.CallContext(ctx, &result, "web3_version_network")
+	// err := t.c.CallContext(ctx, &result, "eth_coinbase")
 	return result, err
 }
